@@ -1,17 +1,15 @@
 {
-  "id": "[plugin].com.pot-app.ocrspace",
+  "id": "[plugin].com.pot-app.ocrtex",
   "plugin_type": "recognize",
   "icon": "icon.png",
-  "display": "OCR Space",
-  "homepage": "https://github.com/pot-app/pot-app-recognize-plugin-template",
+  "display": "OCR Tex",
+  "homepage": "https://github.com/ygguorun/pot-app-recognize-plugin-ocrtex",
   "needs": [
     {
-      "key": "engine",
-      "display": "Engine",
-      "type": "select",
-      "options": { "1": "Engine 1", "2": "Engine 2", "3": "Engine 3" }
-    },
-    { "key": "apikey", "display": "Api Key", "type": "input" }
+      "key": "session_id",
+      "display": "session_id",
+      "type": "input"
+    }
   ],
   "language": {
     "auto": "eng",
