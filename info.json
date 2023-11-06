@@ -1,9 +1,9 @@
 {
-  "id": "[plugin].com.pot-app.ocrtex",
+  "id": "[plugin].com.ygguorun.pix2text",
   "plugin_type": "recognize",
   "icon": "icon.png",
-  "display": "OCR Tex",
-  "homepage": "https://github.com/ygguorun/pot-app-recognize-plugin-ocrtex",
+  "display": "Pix2Text",
+  "homepage": "https://github.com/ygguorun/pot-app-recognize-plugin-pix2text",
   "needs": [
     {
       "key": "session_id",
