@@ -7,11 +7,10 @@ use std::error::Error;
 #[no_mangle]
 pub fn recognize(
     base64: &str, // 图像Base64
-    lang: &str,   // 识别语言
+    _lang: &str,   // 识别语言
     // (pot会根据info.json 中的 language 字段传入插件需要的语言代码，无需再次转换)
     needs: HashMap<String, String>, // 插件需要的其他参数,由info.json定义
 ) -> Result<Value, Box<dyn Error>> {
-    let _ = lang;
     let client = reqwest::blocking::ClientBuilder::new().build()?;
 
     let session_id = match needs.get("session_id") {
@@ -19,16 +18,15 @@ pub fn recognize(
         None => return Err("session_id not found".into()),
     };
 
-    let base64 = general_purpose::STANDARD.decode(base64)?;
+    let image_bytes = general_purpose::STANDARD.decode(base64)?;
 
     let form_data = Form::new()
         .text("session_id", session_id.to_string())
-        .part("image", Part::bytes(base64).file_name("image.png"));
+        .part("image", Part::bytes(image_bytes).file_name("image.png"));
 
     let res: Value = client
         .post("https://p2t.breezedeus.com/api/pix2text")
         .header("authority", "p2t.breezedeus.com")
-        .header("dnt", "1")
         .multipart(form_data)
         .send()?
         .json()?;
