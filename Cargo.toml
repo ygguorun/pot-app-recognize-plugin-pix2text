@@ -1,6 +1,6 @@
 [package]
 name = "plugin" # 名称固定为plugin，请勿更改
-version = "1.0.0"
+version = "1.0.1"
 authors = ["pot-app"]
 edition = "2021"
 
