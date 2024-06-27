@@ -1,5 +1,5 @@
 {
-  "id": "[plugin].com.ygguorun.pix2text",
+  "id": "plugin.com.ygguorun.pix2text",
   "plugin_type": "recognize",
   "icon": "icon.png",
   "display": "Pix2Text",
