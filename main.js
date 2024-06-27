@@ -38,6 +38,8 @@ async function recognize(base64, _lang, options) {
         } else {
             throw JSON.stringify(res);
         }
+    } else if (res.status == 401) {
+        throw `用户登录已过期(User login expired)\n${JSON.stringify(res)}`;
     } else {
         throw JSON.stringify(res);
     }
